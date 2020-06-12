@@ -1,4 +1,5 @@
-This is a README.md file for 2020-1 OSS Final Project
+This is a README.md file for 2020-1 OSS Final Project.<br/> 
+**Real-Time Intruder Alert System**
 ==============
 My name is Jiho Kang, 21500014.  
 'OSS_2020-1_Final_Projcet.py' was written by *Jiho Kang*.<br/>
