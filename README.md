@@ -1,10 +1,10 @@
 This is a README.md file for 2020-1 OSS Final Project
 ==========
 My name is Jiho Kang, 21500014.  
--
+---
 
 Project Outline
--
+--
 The subject of the project is the Intruder Alert System. 
  
 Function 
