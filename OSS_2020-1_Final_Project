@@ -31,7 +31,7 @@ font=ImageFont.load_default()
 # Piezo Buzzer pin-map 
 Buzzer=26 
 GPIO.setup(Buzzer, GPIO.OUT)
-piezo=GPIO.PWM(Buzzer,392) # (channel, frequency)
+piezo=GPIO.PWM(Buzzer,440) # (channel, frequency)
 piezo.start(100) # Low+Passive  
 
 # UDP_WIFI
@@ -64,30 +64,40 @@ try:
         if distance<=200 and distance>=5: 
             print "distance:",distance,"cm" 
 	    now=time.localtime()
-	    message1_UDP="Intruder Detected!" 
+	    message1_UDP="Intruder Detected within two meters!" 
 	    message2_UDP="%04d/%02d/%02d %02d:%02d:%02d"%(now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec) 	
+	    message3_UDP="distance:",distance,"cm"
 	    sock.sendto(message1_UDP, (UDP_IP, UDP_PORT)) 
-	    sock.sendto(message2_UDP, (UDP_IP, UDP_PORT))
+	    sock.sendto(message2_UDP, (UDP_IP, UDP_PORT)) 
+	    sock.sendto(str(message3_UDP), (UDP_IP, UDP_PORT))
             i=1
         if distance>200 and i==1: 
             print "It's over two meter..."
             i=0
-        
+
 	# Piezo Buzzer
+	if distance<=200 and distance>=5: 
+	    piezo.ChangeDutyCycle(40) 
+	else : 
+	    piezo.ChangeDutyCycle(100) 
 
         # Setting for OLED
-        OLED_print = "distance:",distance,"cm"
+        distance_OLED_print = distance,"cm"
         image = Image.new('1',(disp.width, disp.height)) 
         draw = ImageDraw.Draw(image) 
         draw.rectangle((0,0,disp.width-1,disp.height-1),outline=1,fill=0) 
-        draw.text((8,8),'2020 OSS Final Projcet',font=font,fill=255) 
-        draw.text((8,16),str(OLED_print),font=font,fill=255) 
+        draw.text((8,8),'2020-1 OSS',font=font,fill=255) 
+	draw.text((8,16),'Final Project',font=font,fill=255) 
+        draw.text((8,24),'Distance:',font=font,fill=255)
+        draw.text((8,32),str(distance_OLED_print),font=font,fill=255)
         
-        # Display Image 
+	# Display Image 
         disp.image(image) 
         disp.display()
         time.sleep(2)
 
 except KeyboardInterrupt: 
     piezo.stop()
-    GPIO.cleanup()
+    disp.clear() 
+    disp.display()
+    GPIO.cleanup() 

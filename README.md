@@ -5,7 +5,7 @@ My name is Jiho Kang, 21500014.
 
 Project Outline
 --
-The subject of the project is the Intruder Alert System. 
+The subject of the project is the Real-Time Intruder Alert System. 
  
 Function 
 - 
