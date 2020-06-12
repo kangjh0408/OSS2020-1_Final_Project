@@ -1,7 +1,7 @@
 This is a README.md file for 2020-1 OSS Final Project
 ==========
 My name is Jiho Kang, 21500014.  
-'OSS_2020-1_Final_Projcet.py was written by Jiho Kang using an open-source library.
+'OSS_2020-1_Final_Projcet.py' was written by Jiho Kang using an open-source library.
 -
 
 Project Outline
@@ -10,10 +10,10 @@ The subject of the project is the Real-Time Intruder Alert System.
  
 Function 
 - 
-* Detect Intruder by using ultrasonic sensor. 
-* Mark the distance measured by ultrasonic sensors on OLED. 
-* Buzzer sounds when within a certain distance range. 
-* The measured distance is transferred to the server using WIFI. 
+* Detect Intruder by using *Ultrasonic sensor*. 
+* Mark the distance measured by ultrasonic sensors on *OLED*. 
+* *Buzzer* sounds when within a certain distance range. 
+* The measured distance is transferred to the server using *WIFI*. 
 
 Python module install
 - 
@@ -31,4 +31,5 @@ GPIO.BCM | HC-SR04
       23 |    TRIG 
       24 |    ECHO 
       5V |     VCC 
-     GND |     GND 
+     GND |     GND  
+-------- |--------
