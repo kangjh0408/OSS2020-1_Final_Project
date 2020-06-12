@@ -13,7 +13,7 @@ Function
 - 
 * Detect Intruder by using **Ultrasonic sensor**. 
 * Mark the distance measured by ultrasonic sensors on **OLED**. 
-* **Buzzer** sounds when within a certain distance range. 
+* **Buzzer** makes warning sound when within a certain distance range. 
 * The measured distance is transferred to the server using **WIFI**. 
 
 Python Module Install
@@ -57,4 +57,4 @@ Email Address: 21500014@handong.edu
 YouTube video link address 
 -  
 You can see the operation of this project.
-
+Link: youtube.com/watch?v=tPhkbkHc6fw
