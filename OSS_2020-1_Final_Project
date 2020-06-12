@@ -1,15 +1,14 @@
-# Ultra-Sonic
 import RPi.GPIO as GPIO 
 import time 
-
-# OLED
+import datetime 
+import socket
 import Adafruit_GPIO.SPI as SPI 
 import Adafruit_SSD1306 
 from PIL import Image 
 from PIL import ImageDraw 
 from PIL import ImageFont 
 
-# Ultra-Sonic Pin-map
+# Ultra-Sonic pin-map
 TRIG=23 
 ECHO=24
 GPIO.setmode(GPIO.BCM)
@@ -23,19 +22,31 @@ RST=6
 DC=12 
 SPI_PORT=0
 SPI_DEVICE=0
-disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, dc=DC, spi=SPI.SpiDev(SPI_PORT,SPI_DEVICE,max_speed_hz=8000000)) 
+disp=Adafruit_SSD1306.SSD1306_128_64(rst=RST, dc=DC, spi=SPI.SpiDev(SPI_PORT,SPI_DEVICE,max_speed_hz=8000000)) 
 disp.begin() 
 disp.clear() 
 disp.display() 
 font=ImageFont.load_default()
 
-print "Calibrating...."
+# Piezo Buzzer pin-map 
+Buzzer=26 
+GPIO.setup(Buzzer, GPIO.OUT)
+piezo=GPIO.PWM(Buzzer,392) # (channel, frequency)
+piezo.start(100) # Low+Passive  
+
+# UDP_WIFI
+UDP_IP="192.168.43.71"
+UDP_PORT=50000
+sock=socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
+
+print "Start"
 time.sleep(2)
 
-print "Place the object...." 
+print "Detect the intruder within 2 meters" 
 
 try: 
     while True: 
+	# Measure distance by Ultrasonic
         GPIO.output(TRIG, True)
         time.sleep(0.00001)
         GPIO.output(TRIG, False)
@@ -47,18 +58,23 @@ try:
             pulse_end = time.time() 
 
         pulse_duration = pulse_end - pulse_start 
-
         distance = pulse_duration * 17150 
-
         distance = round(distance+1.15,2)
 
-        if distance<=100 and distance>=5: 
-            print "distance:",distance,"cm"
+        if distance<=200 and distance>=5: 
+            print "distance:",distance,"cm" 
+	    now=time.localtime()
+	    message1_UDP="Intruder Detected!" 
+	    message2_UDP="%04d/%02d/%02d %02d:%02d:%02d"%(now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec) 	
+	    sock.sendto(message1_UDP, (UDP_IP, UDP_PORT)) 
+	    sock.sendto(message2_UDP, (UDP_IP, UDP_PORT))
             i=1
-        if distance>100 and i==1: 
-            print "It's over one meter..."
+        if distance>200 and i==1: 
+            print "It's over two meter..."
             i=0
         
+	# Piezo Buzzer
+
         # Setting for OLED
         OLED_print = "distance:",distance,"cm"
         image = Image.new('1',(disp.width, disp.height)) 
@@ -73,4 +89,5 @@ try:
         time.sleep(2)
 
 except KeyboardInterrupt: 
+    piezo.stop()
     GPIO.cleanup()
