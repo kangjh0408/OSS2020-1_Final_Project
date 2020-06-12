@@ -5,19 +5,23 @@ My name is Jiho Kang, 21500014.
 The function of the sensor operation is used through an open source library.
 -
 
-Project Outline
+What does this project do?
 -
-The subject of the project is the Real-Time Intruder Alert System. 
+The subject of the project is the Real-Time Intruder Alert System.<br/>
  
-Function 
-- 
+Function
 * Detect Intruder by using **Ultrasonic sensor**. 
 * Mark the distance measured by ultrasonic sensors on **OLED**. 
 * **Buzzer** makes warning sound when within a certain distance range. 
-* The measured distance is transferred to the server using **WIFI**. 
+* The measured distance is transferred to the server using **Wi-Fi**. 
 
-Python Module Install
+Why is this project useful?
 - 
+Cadillac(Car Manfacturing Co.) adopted a ultrasonic sensor that prevents intrusions by detecting internal movements after the door is locked. This example shows the efficiency of ultrasonic sensors. It is expected that damage caused by intruders will be greatly reduced by using ultrasonic sensors and by immediately sending warning messages to users using Wi-Fi communication.
+
+How do I get started? 
+-
+Python Module Install<br/>
 1. Ultrasonic Sensor (HC-SR04), Piezo Buzzer (SZH-SDBJ-007 ,Low+Passive) 
 	* sudo pip install RPi.GPIO  
 1. OLED (Monochrome 0.96 128x64 OLED graphic display ada-326) 
@@ -25,8 +29,7 @@ Python Module Install
 1. Socket 
 	* sudo pip install socket.py 
 
-PIN-MAP 
-- 
+PIN-MAP<br/>
 |GPIO.BCM | HC-SR04 | 
 |-------- | ------- | 
 |      23 |    TRIG |
@@ -50,8 +53,9 @@ PIN-MAP
 |     GND |    GND | 
 |      26 |    I/O |
 
-Please contact me if you have any problems. 
+Where can I get more help, if I need it? 
 - 
+If you have any questions, feel free to contact email address below:<br/>
 Email Address: 21500014@handong.edu 
 
 YouTube video link address 
