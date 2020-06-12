@@ -56,5 +56,5 @@ Email Address: 21500014@handong.edu
 
 YouTube video link address 
 -  
-You can see the operation of this project.
-Link: youtube.com/watch?v=tPhkbkHc6fw
+You can see the operation of this project.<br/>
+Link: https://youtube.com/watch?v=tPhkbkHc6fw
