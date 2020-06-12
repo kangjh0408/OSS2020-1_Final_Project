@@ -16,7 +16,7 @@ Function
 * **Buzzer** sounds when within a certain distance range. 
 * The measured distance is transferred to the server using **WIFI**. 
 
-Python module install
+Python Module Install
 - 
 1. Ultrasonic Sensor (HC-SR04), Piezo Buzzer (SZH-SDBJ-007 ,Low+Passive) 
 	* sudo pip install RPi.GPIO  

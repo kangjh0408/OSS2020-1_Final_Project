@@ -61,22 +61,22 @@ try:
         distance = pulse_duration * 17150 
         distance = round(distance+1.15,2)
 
-        if distance<=200 and distance>=5: 
+        if distance<=100 and distance>=5: 
             print "distance:",distance,"cm" 
 	    now=time.localtime()
-	    message1_UDP="Intruder Detected within two meters!" 
+	    message1_UDP="Intruder Detected within one meter!" 
 	    message2_UDP="%04d/%02d/%02d %02d:%02d:%02d"%(now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec) 	
 	    message3_UDP="distance:",distance,"cm"
 	    sock.sendto(message1_UDP, (UDP_IP, UDP_PORT)) 
 	    sock.sendto(message2_UDP, (UDP_IP, UDP_PORT)) 
 	    sock.sendto(str(message3_UDP), (UDP_IP, UDP_PORT))
             i=1
-        if distance>200 and i==1: 
-            print "It's over two meter..."
+        if distance>100 and i==1: 
+            print "It's over one meter..."
             i=0
 
 	# Piezo Buzzer
-	if distance<=200 and distance>=5: 
+	if distance<=100 and distance>=5: 
 	    piezo.ChangeDutyCycle(40) 
 	else : 
 	    piezo.ChangeDutyCycle(100) 
@@ -94,7 +94,7 @@ try:
 	# Display Image 
         disp.image(image) 
         disp.display()
-        time.sleep(2)
+        time.sleep(1)
 
 except KeyboardInterrupt: 
     piezo.stop()
