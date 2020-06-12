@@ -42,7 +42,7 @@ sock=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 print "Start"
 time.sleep(2)
 
-print "Detect the intruder within 2 meters" 
+print "Detect the intruder within one meter" 
 
 try: 
     while True: 
