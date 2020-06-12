@@ -1,7 +1,8 @@
 This is a README.md file for 2020-1 OSS Final Project
 ==========
 My name is Jiho Kang, 21500014.  
-'OSS_2020-1_Final_Projcet.py' was **written by Jiho Kang** using an open-source library.
+'OSS_2020-1_Final_Projcet.py' was written by *Jiho Kang* 
+using an open-source library.
 -
 
 Project Outline
@@ -26,10 +27,10 @@ Python module install
 
 PIN-MAP 
 - 
-GPIO.BCM | HC-SR04 
--------- | ------- 
-      23 |    TRIG 
-      24 |    ECHO 
-      5V |     VCC 
-     GND |     GND  
--------- |--------
+|GPIO.BCM | HC-SR04 | 
+|-------- | ------- | 
+|      23 |    TRIG |
+|      24 |    ECHO | 
+|      5V |     VCC | 
+|     GND |     GND |  
+
