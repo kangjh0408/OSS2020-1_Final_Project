@@ -32,5 +32,29 @@ PIN-MAP
 |      23 |    TRIG |
 |      24 |    ECHO | 
 |      5V |     VCC | 
-|     GND |     GND |  
+|     GND |     GND |   
+
+|GPIO.BCM | OLED(SPI)| 
+|-------- | -------- | 
+|       6 |      RST | 
+|      12 |       DC |  
+|     GND |      GND | 
+|      5V |      VCC | 
+|(SCLK)11 |      CLK | 
+|(MOSI)10 |     DATA | 
+|      12 |       DC | 
+
+|GPIO.BCM | Buzzer | 
+|-------- | ------ | 
+|    3.3V |    VCC | 
+|     GND |    GND | 
+|      26 |    I/O |
+
+Please contact me if you have any problems. 
+- 
+Email Address: 21500014@handong.edu 
+
+YouTube video link address 
+-  
+You can see the operation of this project.
 
