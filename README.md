@@ -4,7 +4,8 @@ Subject: "Real-Time Intruder Alert System"
 My name is Jiho Kang, 21500014.  
 'OSS_2020-1_Final_Projcet.py' was written by *Jiho Kang*.<br/>
 The function of the sensor operation is used through an open source library.<br/> 
-*An example of each sensor module was used to write code into one System('OSS_2020-1_Final_Project.py')*
+An example of each sensor module was used to write code into one System:<br/>
+*('OSS_2020-1_Final_Project.py')*.
 -
 
 Open Source and Example Link
@@ -17,7 +18,7 @@ Open Source and Example Link
 3. Piezo Buzzer(SZH-SDBJ-007, Low+Passive) 
 	* https://sourceforge.net/p/raspberry-gpio-python/wiki/PWM/
 4. Socket 
-	* https://wiki.python.org/moin/Udpcommunication
+	* https://wiki.python.org/moin/UdpCommunication
 
 What does this project do?
 -
