@@ -3,8 +3,21 @@ Subject: "Real-Time Intruder Alert System"
 ==============
 My name is Jiho Kang, 21500014.  
 'OSS_2020-1_Final_Projcet.py' was written by *Jiho Kang*.<br/>
-The function of the sensor operation is used through an open source library.
+The function of the sensor operation is used through an open source library.<br/> 
+*An example of each sensor module was used to write code into one System('OSS_2020-1_Final_Project.py')*
 -
+
+Open Source and Example Link
+- 
+1. UltraSonic sensor(HC-SR04) 
+	* https://www.electronicshub.org/raspberry-pi-ultrasonic-sensor-interface-tutorial/ 
+
+2. 128x64 OLED(Adafruit Monochrome 0.96) 
+	* https://github.com/adafruit/Adafruit_Python_SSD1306
+3. Piezo Buzzer(SZH-SDBJ-007, Low+Passive) 
+	* https://sourceforge.net/p/raspberry-gpio-python/wiki/PWM/
+4. Socket 
+	* https://wiki.python.org/moin/Udpcommunication
 
 What does this project do?
 -
@@ -18,7 +31,7 @@ Function
 
 Why is this project useful?
 - 
-Cadillac(Car Manfacturing Co.) adopted a ultrasonic sensor that prevents intrusions by detecting internal movements after the door is locked. This example shows the efficiency of ultrasonic sensors. It is expected that damage caused by intruders will be greatly reduced by using ultrasonic sensors and by immediately sending warning messages to users using Wi-Fi communication.
+Cadillac(Car Manfacturing Co.) adopted an ultrasonic sensor that prevents intrusions by detecting internal movements after the door is locked. This example shows the efficiency of ultrasonic sensors. It is expected that damage caused by intruders will be greatly reduced by using ultrasonic sensors and by immediately sending warning messages to users using Wi-Fi communication.
 
 How do I get started? 
 -
@@ -62,4 +75,5 @@ Email Address: 21500014@handong.edu
 YouTube video link address 
 -  
 You can see the operation of this project.<br/>
-Link: https://youtube.com/watch?v=tPhkbKHc6fw&t=13s
+Link: https://youtube.com/watch?v=tPhkbKHc6fw&t=13s 
+
